@@ -1,2 +1,3 @@
 # CTS-laboratories
-My examples from software quality testing laboratories.
+My examples from Software Quality Testing laboratories.
+Bucharest University of Economic Studies
