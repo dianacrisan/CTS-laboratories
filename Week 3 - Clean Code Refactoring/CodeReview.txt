@@ -13,3 +13,7 @@ Code Review
 - too many "magic numbers" (hardcoded values)
 - is t limited to {1,2,3,4} or can it be bigger?
 - there are no validations for t, s and perioada
+
+3. Single Responsability & KISS
+
+- outsource the intermediary operations into new simple functions
