@@ -1,5 +1,6 @@
 Code Review
 
+
 1. Code structure & naming conventions
 
 - the package name is too generic; where is the module name?
@@ -8,12 +9,27 @@ Code Review
 - the function arguments names are not OK
 - t and s must have meaningful names
 
+
 2. Implementation
 
 - too many "magic numbers" (hardcoded values)
 - is t limited to {1,2,3,4} or can it be bigger?
 - there are no validations for t, s and perioada
 
+
 3. Single Responsability & KISS
 
 - outsource the intermediary operations into new simple functions
+
+
+4. Reduce the complexity of the existing functions - Single Responsability & KISS
+
+- reduce the complexity of the getPriceWithDiscount - repeating pattern
+- remove the switch by refactoring the first case
+
+
+5. Single Responsability & Dependency Inversion (DIP)
+
+- refactor the custom exceptions framework
+- remove the dependency on how we validate the price and the account age
+- remove the dependency on values and operations that are managed by the Marketing Department
