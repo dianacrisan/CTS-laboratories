@@ -1,4 +1,4 @@
-package ro.ase.csie.cts.course4;
+package ro.ase.csie.cts.course4.dip;
 
 public class TestApp {
 
