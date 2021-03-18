@@ -5,9 +5,7 @@ public class DBConnection {
 	String userAccount;
 	String password;
 	
-	
-	
-	public DBConnection(String serverName) {
+	private DBConnection(String serverName) {
 		this.serverName = serverName;
 		System.out.println("Creating a DB connection to ");
 	}
