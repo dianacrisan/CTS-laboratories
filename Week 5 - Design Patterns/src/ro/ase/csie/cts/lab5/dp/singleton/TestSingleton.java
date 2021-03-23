@@ -19,6 +19,16 @@ public class TestSingleton {
 			System.out.println("They are referencing the same object");
 		}
 		
+		// having both versions of getDBConnection() is not OK, not clean code
+		DBConnection con4 = DBConnection.getDBConnection("10.0.0.1:3306","ctsDB");
+		
+		// test
+		if(con1 == con4) {
+			System.out.println("They are referencing the same object");
+		}
+		
+		// you still get the initial connection, same object as con4 and others
+		DBConnection con5 = DBConnection.getDBConnection("10.0.0.1:3306","cts_prod");
 		
 	}
 	

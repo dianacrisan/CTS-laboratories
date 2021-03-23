@@ -37,6 +37,7 @@ public class DBConnection {
 	}
 	
 	// the method used to return the reference to the unique object - singleton
+	// is using default/application settings values
 	public static DBConnection getDBConnection() {
 		if(DBConnection.dbConnection == null) {
 			// you can get details from files, etc
@@ -45,4 +46,14 @@ public class DBConnection {
 		return DBConnection.dbConnection;
 	}
 	
+	public static DBConnection getDBConnection(String socket, String schema) {
+		if(DBConnection.dbConnection == null) {
+			dbConnection = new DBConnection(socket, schema);
+		}
+		// optional = throw an error if they try to open a connection to a different database
+		if(!socket.equals(dbConnection.socket) || !schema.equals(dbConnection.schema)) {
+			throw new UnsupportedOperationException("You already have an opened connection to a different database");
+		}
+		return DBConnection.dbConnection;
+	}
 }
