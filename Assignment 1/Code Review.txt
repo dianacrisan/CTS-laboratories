@@ -1,0 +1,81 @@
+Code Review:
+
+
+FORMATTING
+- code was not arranged properly => implemented proper alignments and white spaces
+- code blocks starting and end points made visible
+- curly brackets were added where they were missing
+- else clause from constructor was removed because of the Exception in the if clause
+
+
+GENERAL PROGRAMMING
+- attributes did not follow proper naming conventions => applied lowerCamelCase to them
+- this keyword added to differentiate the loanValue of the class and the parameter in the setter function
+- string concatenation removed and function was implemented using string builder
+
+
+MEANINGFUL NAMES
+- modified attributes name so they are understood by users:
+	- rate was modified to monthlyRate
+	- value was modified to loanValue
+	- type was modified to accountType
+- modified functions names so the user can understand exactly what they do:
+	- loan() was modified to getLoanValue()
+	- setValue() was modified to setLoanValue()
+	- to_string() was modified to getAccountDetails()
+	- calculate() was modified to getPremiumAndSuperPremiumAccountsTotalFeesValue()
+	- getRate() was modified to getMonthlyRate()
+	- monthlyRate() was modified to computeMonthlyRate()
+	
+	
+COMMENTS
+- commented code is not necessary => removed comments
+
+
+ENNUMS AND ANNOTATIONS
+- transformed the values for the account type into an enumeration
+- modified the code for implementing the AccountType enumeration and removed the accountType integer
+
+
+MUTABILITY
+- implemented the .0125 broker fee as a static final variable and removed the unnecessary comment
+- implemented the 365 integer as a static final variable
+
+
+CREATING AND DESTROYING OBJECTS
+- removed the unused temp variable
+- removed the unnecessary Account variable in the calculate function and used accounts[i] instead
+
+
+METHODS & INPUT VALIDATION
+- check if parameters are OK before creating a new account
+	- cannot input negative values for loan and monthly rate
+
+
+FUNCTIONS
+- broke the calculate function into multiple smaller more understandable functions that do specific things:
+	- difference between interest and principal (also removed the comment)
+	- account interest fee
+	- loan value with interest
+	- account final fee
+- removed useless function print() that has no actual significance and relevance
+
+
+EXCEPTIONS
+- custom exceptions were created and implemented accordingly
+
+
+CLASSES AND INTERFACES
+- accessor(get) methods used instead of public fields for the attributes:
+	- public class fields were made private
+- because the function for computing the monthly rate must be implemented by all classes:
+	- created a new interface containing it and overwrote it in the Account class
+	=> it is then mandatory for the method to be implemented in the Account class
+	
+	
+CLASSES
+- created the enumeration, interface and exception class so that the class is small
+- class functionalities distributed in other classes
+	
+	
+	
