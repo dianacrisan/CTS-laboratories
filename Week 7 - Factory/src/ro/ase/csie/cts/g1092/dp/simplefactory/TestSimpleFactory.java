@@ -10,7 +10,7 @@ public class TestSimpleFactory {
 		
 		
 		// SIMPLE FACTORY
-		AbstractWeapon bazooka = WeaponsFactory.getWeapon(WeaponType.BAZOOKA, "Boom");
+		AbstractWeapon bazooka = WeaponsFactory.getWeapon(WeaponType.BAZOOKA, "BOOM");
 		superman.setWeapon(bazooka);
 		superman.setWeapon(WeaponsFactory.getWeapon(WeaponType.MACHINE_GUN, "MG"));
 	}
