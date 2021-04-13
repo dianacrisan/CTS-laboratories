@@ -1,4 +1,4 @@
-package ro.ase.csie.cts.g1092.dp.adapter;
+package ro.ase.csie.cts.g1092.dp.decorator;
 
 public class FantasySuperHero extends SuperHeroCharacter {
 

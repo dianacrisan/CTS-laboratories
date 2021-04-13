@@ -1,4 +1,4 @@
-package ro.ase.csie.cts.g1092.dp.adapter;
+package ro.ase.csie.cts.g1092.dp.decorator;
 
 public abstract class SuperHeroCharacter {
 	
@@ -10,7 +10,6 @@ public abstract class SuperHeroCharacter {
 		this.name = name;
 		this.power = power;
 	}
-	
 	public abstract void move();
 	public abstract void crouch();
 	public abstract void takeAHit(int points);
