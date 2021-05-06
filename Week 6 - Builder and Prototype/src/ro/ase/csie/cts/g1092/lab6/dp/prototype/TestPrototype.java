@@ -18,7 +18,8 @@ public class TestPrototype {
 		Tree3DModel tree6 = (Tree3DModel) tree1.clone();
 		Tree3DModel tree7 = (Tree3DModel) tree1.clone();
 
-		System.out.println("The end");		
+		System.out.println("The end");	
+
 	}
 
 }

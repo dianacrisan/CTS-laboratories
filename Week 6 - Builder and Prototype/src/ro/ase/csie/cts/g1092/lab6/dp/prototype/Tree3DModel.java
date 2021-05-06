@@ -66,7 +66,7 @@ public class Tree3DModel implements Cloneable {
 		} */
 		
 		return copy;
-	}
+	}	
 
 	
 }

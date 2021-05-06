@@ -1,0 +1,14 @@
+Bachelor Project: Web Application for Data Mining
+
+Where can PROTOTYPE be implemented:
+I believe that I may implement the prototype pattern when wanting to clone certain 
+project data files that may be used for data analysis processes. For example, I 
+may want to clone a file that I used for regression analysis to use it again for 
+principal component analysis.
+
+Advantages:
+- easy to detect errors
+- flexibility and ease in implementation
+
+Disadvantages:
+- complex objects may need another implementation for cloning

@@ -1,0 +1,14 @@
+Bachelor Project: Web Application for Data Mining
+
+Where can REGISTRY be implemented:
+Similar to the Singleton approach, but when using registry, multiple unique objects are managed 
+using a collection, in this case a HashMap. In this case, when wanting to create a new 
+logger instance, I first check if the instance exists and then create a new one to store 
+it in the HashMap.
+
+Advantages:
+- easy implementation
+- multiple "associations" of the same class may be created
+
+Disadvantages:
+- not only one instance of the singleton is stored in the collection

@@ -1,0 +1,15 @@
+Bachelor Project: Web Application for Data Mining
+
+Where can DECORATOR be implemented:
+The decorator pattern may be used inside my web application for example when decorating 
+a special page after the main page (for example with different media elements) or simply when 
+creating a special user like a manager after the default user template.
+
+Advantages:
+- easy to implement and understand
+- more flexibility to add functionalities to already existing components
+- there are no limits to the maximum number of decorations
+
+Disadvantages:
+- a decorator is only a wrapper to the initial object and they are not identical
+- excessive use may result in a lot of similar objects with different behaviors

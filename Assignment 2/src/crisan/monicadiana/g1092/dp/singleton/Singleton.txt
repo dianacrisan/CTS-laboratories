@@ -1,0 +1,20 @@
+Bachelor Project: Web Application for Data Mining
+
+Where can SINGLETON be implemented:
+The singleton pattern allows a class or an object to have a single instance and
+it a global variable would be used in order to manage that instance. This prevents 
+multiple instances of that class to be active at the same time. 
+Because for my web application I use React components for my front-end, I believe 
+that this pattern may be good for logging errors from all of the different parts 
+of the applications during the debugging process.
+
+Advantages:
+- logger class instantiated only once and global access to that instance
+- easy to implement and easy to use
+- lazy instantiation
+- don't have to deal with synchronization (writing to data files)
+
+Disadvantages:
+- code lines must be inspected carefully so that we understand what the methods 
+are actually doing
+- the singleton implementation does not follow the DRY principle

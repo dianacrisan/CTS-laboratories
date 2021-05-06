@@ -1,0 +1,14 @@
+Bachelor Project: Web Application for Data Mining
+
+Where can COMPOSITE be implemented:
+Because the web application allows users to create projects where various data files 
+that will be used as data for the data analysis steps may be added, i think that this 
+patter can expose the hierarchical structure of this process.
+
+
+Advantages:
+- flexibility and simple extendibility
+- integration of new leaf nodes without code modifications
+
+Disadvantages:
+- hard to modify the general structure of the hierarchy
