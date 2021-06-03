@@ -34,7 +34,7 @@ public class Student {
 
 
 	public void setName(String name) throws WrongNameException {
-		if(name.length() < MIN_NAME_SIZE) 
+		if(name.length() < MIN_NAME_SIZE || name.length() > MAX_NAME_SIZE)		
 			throw new WrongNameException();
 		this.name = name;
 	}
@@ -46,14 +46,14 @@ public class Student {
 
 
 	public void setAge(int age) throws WrongAgeException {
-		if(age < MIN_AGE) // MAX AGE should be tested as well for right implementation!
+		if(age < MIN_AGE || age > MAX_AGE)
 			throw new WrongAgeException();
 		this.age = age;
 	}
 
 
 	public void setGrades(ArrayList<Integer> grades) throws WrongGradesException {
-		this.grades = grades;
+		this.grades = (ArrayList<Integer>) grades.clone();
 	}
 	
 	
@@ -88,5 +88,6 @@ public class Student {
 		return min;
 	}
 
+	
 	
 }

@@ -26,7 +26,7 @@ public class TestStudent {
 	// test fixture
     static Student student;
     static ArrayList<Integer> grades;
-    static String initialName;
+    static String initialName = "John";
     static int initialAge;
 
     @BeforeClass // only once
@@ -41,7 +41,7 @@ public class TestStudent {
     @AfterClass // only once
     public static void tearDownAfterClass() throws Exception {
     	grades.clear();
-    	grades=null;
+    	grades = null;
 
     }
 
@@ -60,7 +60,8 @@ public class TestStudent {
     public void test() {
         fail("not implemented");
     }
-
+    
+	// group 1092 tests
     @Test
     public void testSetNameRightValues() throws WrongNameException {
 
@@ -147,4 +148,84 @@ public class TestStudent {
 		
 		assertNotEquals(initialName, student.getName());
 	}
+	
+	// group 1093 tests
+	@Test
+	public void testSetNameConformanceForRightInput() throws WrongNameException {
+		String newName = "John Doe";
+		student.setName(newName);
+		assertEquals("Testing with a proper name",  newName,  student.getName());
+	}
+	
+	@Test
+	public void testSetAgeConformanceForRightInput()  {
+		int newAge = initialAge +1;
+		try {
+			student.setAge(newAge);
+			assertEquals("Testing with a proper age",  newAge, student.getAge());
+		} catch (WrongAgeException e) {
+			fail("We got an exception for right data");
+		}
+	}
+	
+	@Test
+	public void testSetAgeErrorConditionNegativeValue() {
+		int newAge = initialAge * (-1);
+		try {
+			student.setAge(newAge);
+			fail("We didn't get the exception.");
+		} catch (WrongAgeException e) {
+			assertTrue(true);
+		}
+	}
+	
+	
+	@Test(expected = WrongNameException.class)
+	public void testSetNameErrorConditionSmallName() throws WrongNameException {
+		String newName = "Na";
+		student.setName(newName);
+	}
+	
+//	@Test
+//	public void testGetGradesAverageOrderingAscending() throws WrongGradesException {
+//		ArrayList<Integer> grades = new ArrayList<Integer>();
+//		for(int i=6; i<10; i++)
+//			grades.add(i);
+//		student.setGrades(grades);
+//		float expectedAverage = 7.5f;
+//		float realAverage = student.getGradesAverage();
+//		assertEquals("Testing with sorted array", expectedAverage, realAverage, 0);
+//	}
+	
+//	@Test
+//	public void testGetGradesAverageCardinalityZero() throws WrongGradesException {
+//		ArrayList<Integer> grades = new ArrayList<Integer>();
+//		student.setGrades(grades);
+//		
+//		float expectedAvg = 0;
+//		float computedAvg = student.getGradesAverage();
+//		assertEquals("Testing with an empty array of grades", expectedAvg, computedAvg, 0);
+//	}
+	
+	@Test
+	public void testGetGradesAverageCardinalityOne() throws WrongGradesException {
+		ArrayList<Integer> grades = new ArrayList<Integer>();
+		grades.add(Student.MAX_GRADE);
+		student.setGrades(grades);
+		
+		float expectedAvg = Student.MAX_GRADE;
+		float computedAvg = student.getGradesAverage();
+		assertEquals("Testing with an empty array of grades", expectedAvg, computedAvg, 0);
+	}
+	
+//	@Test
+//	public void testGetGradesAverageExistanceNullReferenceForGrades() throws WrongGradesException {
+//		student.setGrades(null);
+//		float expectedAverage = 0;
+//		float computedAverage = student.getGradesAverage();
+//		assertEquals("Testing with null for grades", expectedAverage, computedAverage, 0);
+//
+//	}
+
+	
 }
